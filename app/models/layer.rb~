@@ -1,0 +1,4 @@
+class Layer < ActiveRecord::Base
+  attr_accessible :description, :nome
+  validates :nome, :presence => true
+end

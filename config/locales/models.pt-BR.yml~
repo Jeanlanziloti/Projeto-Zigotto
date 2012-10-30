@@ -1,0 +1,6 @@
+pt-BR:
+  activerecord:
+    attributes:
+      layer:
+        name: "Nome"
+        description: "Descrição"

@@ -1,0 +1,22 @@
+.page-header
+  %h1 Camadas
+%table.table.table-striped
+  %thead
+    %tr
+      %th Id
+      %th Nome
+      %th Descrição
+      %th Criado em
+      %th Ações
+  %tbody
+    - @layers.each do |layer|
+      %tr
+        %td= link_to layer.id, layer_path(layer)
+        %td= layer.nome
+        %td= layer.description
+        %td=l layer.created_at
+        %td
+          = link_to "Editar", edit_layer_path(layer), :class => 'btn btn-mini'
+          = link_to "deletar", layer_path(layer), :method => :delete, :data => { :confirm => "Tem Certeza?" }, :class => 'btn btn-mini btn-danger'
+
+= link_to "Nova Camada", new_layer_path, :class => 'btn btn-primary'

@@ -1,0 +1,24 @@
+.page-header
+  %h1 Protocolos
+%table.table.table-striped
+  %thead
+    %tr
+      %th Id
+      %th Nome
+      %th Descrição
+      %th Layer
+      %th Criado em 
+      %th Ações
+  %tbody
+    - @protocols.each do |protocol|
+      %tr
+        %td= link_to protocol.id, protocol_path(protocol)
+        %td= protocol.name
+        %td= protocol.description
+        %td= protocol.layer_id
+        %td=l protocol.created_at
+        %td
+          = link_to "Editar", edit_protocol_path(protocol), :class => 'btn btn-mini'
+          = link_to "Excluir", protocol_path(protocol), :method => :delete, :data => { :confirm => "Tem Certeza?" }, :class => 'btn btn-mini btn-danger'
+
+= link_to "Novo Protocolo	", new_protocol_path, :class => 'btn btn-primary'

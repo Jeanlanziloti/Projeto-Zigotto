@@ -1,0 +1,6 @@
+= simple_form_for @layer, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :nome
+  = f.input :description, :input_html => { rows: 4}
+  .form-actions
+    = f.button :submit, "Cadastrar", "Cadastrar", :class => 'btn btn-primary'
+    = link_to "Cancelar", layers_path, :class => 'btn'

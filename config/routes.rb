@@ -1,4 +1,7 @@
 
 Zigotto::Application.routes.draw do
-   root :to => 'home#index'
+  resources :protocols
+
+  resources :layers
+	root :to => 'home#index'
 end

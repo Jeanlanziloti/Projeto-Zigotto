@@ -1,0 +1,7 @@
+= simple_form_for @protocol, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :description, :input_html => { rows: 4 }
+  = f.association :layer, :as => :select, :collection => Layer.all.map{|l| [l.nome, l.id]}
+  .form-actions
+    = f.button :submit, "Cadastrar", :class => 'btn btn-primary'
+    = link_to "Cancelar", protocols_path, :class => 'btn'
